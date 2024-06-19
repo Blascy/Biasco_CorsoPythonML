@@ -44,13 +44,17 @@ inventario["papera di gomma"] = {"prezzo": 5, "quantita": 100}
 inventario["anello"] = {"prezzo": 200, "quantita": 50}
 inventario["borraccia blu"] = {"prezzo": 15, "quantita": 30}
 
-controllo2 = True
+#Ciclo per gestire le operazioni dell'inventario
+while True:
+    print("\nCosa desideri fare?")
+    print("1. Mostra l'inventario")
+    print("2.Aggiungi un nuovo articolo")
+    print("3.Aggiorna un articolo")
+    print("4. Esci")
 
-aggiunta = input("Vuoi aggiungere nuovi acquisti all'inventario? (si/no): ")
-if aggiunta.lower() == "si":
-    while controllo2:
-        aggiunta2.lower() == "si"
-        print("Articoli aggiunti: ")
-
-
+#scelgo le opzioni elencate, ogni scelta avrà un azione associata
+    scelta = input("Inserisci il numero corrispondente all'azione desiderata: ")
+    if scelta == 1:
+        print("Inventario:")
+        for articolo in inventario["articoli"]:
 

@@ -1,0 +1,2 @@
+andrea:10,8,7,9
+luca:6,9,10,   #deve esserci corrispondenza tra le colonne perche è excel praticamente

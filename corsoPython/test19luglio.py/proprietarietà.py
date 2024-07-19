@@ -1,0 +1,1 @@
+"""Le proprietarietà sono meccanismi che permettono di controllare e proteggere l'accesso e la modifica degli attributi e dei metodi all'interno delle tue classi e moduli."""

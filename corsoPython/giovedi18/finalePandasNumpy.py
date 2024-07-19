@@ -3,10 +3,9 @@ import numpy as np
 
 def carica_e_esplora_dataset(file_path):
     df = pd.read_csv(file_path)
-    # Assicurati di includere tutte le colonne necessarie
-    colonne_necessarie = ['ID_Cliente', 'Età', 'Durata_Abbonamento', 'Tariffa_Mensile', 
+    colonne = ['ID_Cliente', 'Età', 'Durata_Abbonamento', 'Tariffa_Mensile', 
                           'Dati_Consumati', 'Servizio_Clienti_Contatti', 'Churn']
-    df = df[colonne_necessarie]  # Filtra solo le colonne necessarie
+    df = df[colonne]  # Filtra solo le colonne necessarie
     
     print("Prime righe del dataset:")
     print(df.head(), "\n")
@@ -19,7 +18,7 @@ def carica_e_esplora_dataset(file_path):
         print("Distribuzione dei valori nella colonna 'Churn':")
         print(df['Churn'].value_counts(), "\n")
     else:
-        print("Errore: La colonna 'Churn' non è presente nel dataset.\n")
+        print("La colonna 'Churn' non è presente nel dataset.\n")
     
     print("Valori mancanti per colonna:")
     print(df.isnull().sum(), "\n")
@@ -29,10 +28,10 @@ def carica_e_esplora_dataset(file_path):
 def pulizia_dati(df):
     df = df.dropna()
     
-    # Esempio: rimuovere righe con età negative
+    # rimuovere righe con età negative
     df = df[df['Età'] >= 0]
     
-    # Esempio: rimuovere righe con tariffe mensili irrealistiche
+    # rimuovere righe con tariffe mensili irrealistiche
     df = df[(df['Tariffa_Mensile'] >= 0) & (df['Tariffa_Mensile'] <= 1000)]
     
     print("Informazioni generali sul dataset dopo la pulizia:")
